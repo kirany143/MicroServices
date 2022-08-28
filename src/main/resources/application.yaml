@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: local
+---
+spring.jpa.defer-datasource-initialization=true    
+---
+
+spring:
+
+  application:
+    name: maybank-api
+#  security:
+#    user:
+#      name: bankapp
+#      password: changeit
+
+
+  profiles: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    
+  
+  logging:
+    level: DEBUG
+    
+        
+server:
+  port: 8080
